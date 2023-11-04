@@ -17,8 +17,16 @@ const TicketCard = (props: Props) => {
             <h4>Ticket Title</h4>
             <hr className="h-px border-0 bg-page mb-2" />
             <p className="whitespace-pre-wrap">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus earum optio aperiam voluptatum? Voluptatem natus vel, veritatis inventore enim iusto quidem, rem commodi, nam numquam est possimus culpa magni in.</p>
-            <ProgressDisplay />
-            <StatusDisplay />
+            <div className="flex-grow"></div>
+            <div className="flex mt-2">
+                <div className="flex flex-col">
+                    <p className="text-xs my-1">02/03/01 10:10AM</p>
+                    <ProgressDisplay />
+                </div>
+                <div className="ml-auto flex items-end">
+                    <StatusDisplay />
+                </div>
+            </div>
         </div>
     )
 }
