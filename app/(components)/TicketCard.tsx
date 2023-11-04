@@ -7,7 +7,7 @@ type Props = {}
 
 const TicketCard = (props: Props) => {
     return (
-        <div className="flex flex-col hover:bg-card-hover rounded-md shadow-lg p-3 m-2">
+        <div className="flex flex-col bg-card hover:bg-card-hover hover:cursor-pointer rounded-md shadow-lg p-3 m-2">
             <div className="flex mb-3">
                 <PriorityDisplay />
                 <div className="ml-auto">
