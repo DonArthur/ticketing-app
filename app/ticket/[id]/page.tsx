@@ -1,3 +1,5 @@
+import TicketForm from "@/app/(components)/TicketForm"
+
 type Props = {
     params: {
         id: number,
@@ -6,7 +8,7 @@ type Props = {
 
 const Ticket = ({ params }: Props) => {
     return (
-        <div>Ticket {params.id}</div>
+        <TicketForm />
     )
 }
 
