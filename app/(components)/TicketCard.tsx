@@ -9,7 +9,7 @@ const TicketCard = ({ ticket }: any) => {
     return (
         <div className="flex flex-col bg-card hover:bg-card-hover hover:cursor-pointer rounded-md shadow-lg p-3 m-2">
             <div className="flex mb-3">
-                <PriorityDisplay />
+                <PriorityDisplay priority={ticket.priority} />
                 <div className="ml-auto">
                     <DeleteBlock />
                 </div>
