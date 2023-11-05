@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 const PriorityDisplay = (priority: any) => {
     const renderIcon = () => {
         const components = []
-        for (let i = 0; i < priority.priority; i++) {
-            components.push(<FontAwesomeIcon key={i} icon={faFire} className='text-red-400' />)
+        for (let i = 0; i < 5; i++) {
+            components.push(<FontAwesomeIcon key={i} icon={faFire} className={`pr-1 ${i < priority.priority ? 'text-red-400' : 'text-slate-400'}`} />)
         }
         return components
     }

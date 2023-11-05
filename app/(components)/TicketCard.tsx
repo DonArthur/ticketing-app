@@ -6,6 +6,8 @@ import StatusDisplay from "./StatusDisplay"
 type Props = {}
 
 const TicketCard = ({ ticket }: any) => {
+    const date = new Date(ticket.createdAt)
+    const createdTime = `${date.getDate()}-${date.getMonth()}-${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
     return (
         <div className="flex flex-col bg-card hover:bg-card-hover hover:cursor-pointer rounded-md shadow-lg p-3 m-2">
             <div className="flex mb-3">
@@ -20,7 +22,7 @@ const TicketCard = ({ ticket }: any) => {
             <div className="flex-grow"></div>
             <div className="flex mt-2">
                 <div className="flex flex-col">
-                    <p className="text-xs my-1">{ticket.updatedAt}</p>
+                    <p className="text-xs my-1">{createdTime}</p>
                     <ProgressDisplay progress={ticket.progress} />
                 </div>
                 <div className="ml-auto flex items-end">
