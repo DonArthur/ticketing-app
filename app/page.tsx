@@ -20,14 +20,19 @@ const Dashboard = async (props: Props) => {
     ...new Set(tickets?.map(({ category }: any) => category)),
   ]
 
+  const uniqueStatuses = [
+    ...new Set(tickets?.map(({ status }: any) => status)),
+  ]
+
   return (
     <div className="p-5">
-      <div>
-        {tickets && uniqueCategories?.map((category: any, index) => (
+      <div className={`grid grid-cols-${uniqueStatuses.length}`}>
+        {tickets && uniqueStatuses?.map((status: any, index) => (
           <div key={index} className="mb-4">
-            <h2>{category}</h2>
-            <div className="lg:grid lg:grid-cols-2 xl:grid xl:grid-cols-4">
-              {tickets.filter((ticket: any) => ticket.category === category).map((filteredTicket: any, _index: string) => (
+            <h3>{status}</h3>
+            <div className="flex flex-col">
+              {/* <div className="lg:grid lg:grid-cols-2 xl:grid xl:grid-cols-4"> */}
+              {tickets.filter((ticket: any) => ticket.status === status).map((filteredTicket: any, _index: string) => (
                 <TicketCard id={_index} key={_index} ticket={filteredTicket} />
               ))}
             </div>
