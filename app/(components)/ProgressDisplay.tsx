@@ -1,9 +1,8 @@
-type Props = {}
-
-const ProgressDisplay = (props: Props) => {
+const ProgressDisplay = (progress: any) => {
+    const width = `${progress.progress}%`
     return (
         <div className="w-full bg-gray-200 rounded-full h-2.5">
-            <div className="bg-blue-700 h-2.5 rounded-full" style={{ width: '75%' }}></div>
+            <div className="bg-blue-700 h-2.5 rounded-full" style={{ width: width }}></div>
         </div>
     )
 }
