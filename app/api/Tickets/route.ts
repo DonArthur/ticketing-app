@@ -21,3 +21,12 @@ export async function GET() {
         return NextResponse.json({ message: 'Error', error }, { status: 500 })
     }
 }
+
+export async function DELETE(id: any) {
+    try {
+        await Ticket.findByIdAndDelete(id)
+        return NextResponse.json({ message: 'The ticket has been deleted' }, { status: 200 })
+    } catch (error) {
+        return NextResponse.json({ message: 'Error', error }, { status: 500 })        
+    }
+}

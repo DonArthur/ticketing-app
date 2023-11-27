@@ -14,7 +14,7 @@ const getTickets = async () => {
 }
 
 const Dashboard = async (props: Props) => {
-  const { tickets } = await getTickets()
+  const { tickets } = (await getTickets()) ?? { tickets: [] }
 
   const uniqueCategories = [
     ...new Set(tickets?.map(({ category }: any) => category)),
@@ -27,7 +27,7 @@ const Dashboard = async (props: Props) => {
   return (
     <div className="p-5">
       <div className={`grid grid-cols-${uniqueStatuses.length}`}>
-        {tickets && uniqueStatuses?.map((status: any, index) => (
+        {tickets && uniqueStatuses ? uniqueStatuses?.map((status: any, index) => (
           <div key={index} className="mb-4">
             <h3>{status}</h3>
             <div className="flex flex-col">
@@ -37,7 +37,7 @@ const Dashboard = async (props: Props) => {
               ))}
             </div>
           </div>
-        ))}
+        )) : null}
       </div>
     </div>
   )
